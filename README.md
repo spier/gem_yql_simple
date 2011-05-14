@@ -6,10 +6,11 @@ This is my first experiment with writing a ruby gem. You can tell when checking 
 
 I am using [bundler][bundler] for the dependencies and [rspec][RSpec] for the testing.
 
-## Useful Readings
-[Developing a RubyGem using Bundler](https://github.com/radar/guides/blob/master/gem-development.md)
-[Making Ruby Gems](http://timelessrepo.com/making-ruby-gems)
-[Using .gemspecs as Intended](http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/)
+
+## Useful Reads
+* [Developing a RubyGem using Bundler](https://github.com/radar/guides/blob/master/gem-development.md)
+* [Making Ruby Gems](http://timelessrepo.com/making-ruby-gems)
+* [Using .gemspecs as Intended](http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/)
 
 
 ## Installation
@@ -17,11 +18,17 @@ I am using [bundler][bundler] for the dependencies and [rspec][RSpec] for the te
 The gem is not released yet!
 If you really want to try it, what I would not recommend, then you have to build it yourself from source.
 
+If you are using bundler I guess you can do the following to install directly from the github repo but I have not tried this:
+
+	gem "yql_simple", :git => "git://github.com:spier/gem_yql_simple.git"
+	
+
 ## Usage
 
 	require "yql_simple"
 	query_string = "SHOW TABLES"
 	pp YqlSimple.query(query_string)
+
 
 ## Notes (more for myself than for anybody else)
 
@@ -42,5 +49,3 @@ If you really want to try it, what I would not recommend, then you have to build
 [bundler]: http://gembundler.com/
 [rspec]: http://relishapp.com/rspec
 [yql]: http://developer.yahoo.com/yql/
-
-
