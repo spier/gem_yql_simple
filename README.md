@@ -9,8 +9,12 @@ I am using bundler for the dependencies and rspec for the testing.
 [Making Ruby Gems](http://timelessrepo.com/making-ruby-gems)
 [Using .gemspecs as Intended](http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/)
 
+## Usage
 
-## Notes
+query_string = "SHOW TABLES"
+pp YqlSimple.query(query_string)
+
+## Notes (more for myself than for anybody else)
 
 ### get a list of rake tasks
 
