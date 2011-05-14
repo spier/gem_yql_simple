@@ -5,7 +5,7 @@ require 'cgi'
 # this does not make sense! then the gem would depend on bundler! LOL!!! :))
 #Bundler.require(:default)
 
-# is this wrong?
+# is this wrong? So I really need to list all the production gems that I have in the .gemspec?
 require 'json'
 require 'nokogiri'
 require 'curb'
@@ -15,14 +15,10 @@ module YqlSimple
     @@yql_api_url = "https://query.yahooapis.com/v1/public/yql"
     @@env = "env=store://datatables.org/alltableswithkeys"
 
-    # def self.query(yql_query, format='json', diagnostics='false')
     def self.query(yql_query, format='json', diagnostics='false')  
       # TODO tried to make the necessary parameters more flexibel. failed for now :)
       # format = (hash.nil? or hash[:format.to_s].nil?) ? 'json' : hash[:format.to_s]
       # format = (hash && hash[:format]) || 'json'
-      
-      # puts format
-      # puts diagnostics
       
       # try to run YQL query. If an error occures return an empty array 
       begin  

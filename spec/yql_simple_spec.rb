@@ -6,8 +6,8 @@ Bundler.require(:default, :development)
 
 YQL_CORE_TABLE_COUNT = 116
 
-# Test
-# Docs: http://rdoc.info/gems/rspec/1.3.2/Spec/Matchers
+# Tests
+# Docs: http://relishapp.com/rspec
 describe YqlSimple do
 
   it "test diagnostics" do
