@@ -1,6 +1,6 @@
 # Simple Ruby gem for YQL
 
-This is my first implementation of a simple wrapper for [YQL][yql] queries. It does not do anything fancy. Instead it just sends an HTTP request to YQL with the given query and returns the results as either Ruby Object or Nokogiri::Document.
+This is my first implementation of a simple wrapper for [YQL][yql] queries. It does not do anything fancy. Instead it just sends an HTTP request to YQL with the given query and returns the results as either a ruby Hash or Nokogiri::XML::Document.
 
 This is my first experiment with writing a ruby gem. You can tell when checking out the code!
 
@@ -43,6 +43,9 @@ If you are using bundler I guess you can do the following to install directly fr
 ### run the tests (this will check for a folder 'spec' and run rspec against all _sec files)
 
 	bundle exec rspec spec
+	
+### generate the rdoc documentation in ./doc
+	rake rdoc
 
 
 
