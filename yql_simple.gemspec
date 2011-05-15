@@ -6,12 +6,16 @@ Gem::Specification.new do |s|
   # general gem information
   s.name        = "yql_simple"
   s.version     = YqlSimple::VERSION
-  s.platform    = Gem::Platform::RUBY
   s.authors     = ["Sebastian Spier"]
   s.email       = ["blog@airness.de"]
   s.homepage    = ""
-  s.summary     = %q{Simple wrapper for calls to YQL}
-  s.description = %q{}
+  s.description = s.summary = %q{Simple wrapper for calls to YQL}
+  
+  s.platform    = Gem::Platform::RUBY
+  s.has_rdoc    = true
+  # s.extra_rdoc_files = ['README.rdoc']
+  # s.rdoc_options = ['--title','--main README.rdoc','--line-numbers']  
+  s.rdoc_options << '--title' << '--main' << 'README.rdoc' << '--line-numbers' << '--inline-source'
 
   #s.rubyforge_project = "yql_simple"
   
@@ -23,7 +27,6 @@ Gem::Specification.new do |s|
   # dependencies when developing this gem
   s.add_development_dependency "rspec"
   s.add_development_dependency "rake"
-  
 
   # all files that will be added to this gem. git is used for this
   s.files         = `git ls-files`.split("\n")

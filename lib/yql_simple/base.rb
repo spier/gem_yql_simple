@@ -18,7 +18,7 @@ module YqlSimple
 
     # Runs the given <b>yql_query</b> and returns the complete response.
     # Depending on the <b>format</b> parameter the result is either a ruby Hash (parsed from JSON) or a Nokogiri::XML::Document. The default is 'json'.
-    # The 'diagnostics' parameter specifies whether or not to return query diagnostics. The default is 'false.'
+    # The <b>diagnostics</b parameter specifies whether or not to return query diagnostics. The default is 'false'.
     # 
     def self.query(yql_query, format='json', diagnostics='false')  
       # TODO tried to make the necessary parameters more flexibel. failed for now :)
