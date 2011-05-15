@@ -18,17 +18,37 @@ I am using bundler[http://gembundler.com] for the dependencies, RSpec[http://rel
 The gem is not released yet!
 If you really want to try it, what I would not recommend, then you have to build it yourself from source.
 
-If you are using bundler I guess you can do the following to install directly from the github repo but I have not tried this:
+If you are using bundler you can do the following to install directly from the source:
 
-	gem "yql_simple", :git => "git://github.com:spier/gem_yql_simple.git"
+	gem "yql_simple", :git => "git://github.com/spier/gem_yql_simple.git"
 	
 
 == Usage
 
-	require "yql_simple"
-	query_string = "SHOW TABLES"
-	pp YqlSimple.query(query_string)
+Example of doing a twitter search, using the yql_simple gem.
 
+	#!/usr/bin/env ruby
+	require "rubygems"
+	require "bundler/setup"
+
+	require "yql_simple"
+
+	query_string = 'SELECT * FROM twitter.search WHERE q="#ruby" LIMIT 5'
+	response = YqlSimple.query(query_string)
+
+	response["query"]["results"]["results"].each do |tweet| 
+	  date = Time.parse(tweet["created_at"]).strftime("%Y-%m-%d %H:%M")  
+	  puts "[#{date}] #{tweet["from_user"]}: #{tweet["text"]}"
+	end
+		
+This will output something like this:
+
+	[2011-05-15 13:12] eyoosuf: Rails and Django for Quick thinking Developers, PHP for Lazy Developers #PHP #RUBY #ROR #PYTHON #Rails #Django
+	[2011-05-15 12:57] rudkovsky: Looking for a job! #rails #ruby #job
+	[2011-05-15 12:48] IndianGuru: Podcaster Miles Forrest interviewing RubyLearning;'s mentor Victor Goff this 18th #ruby
+	[2011-05-15 12:41] openairjoy: outdoor: http://openairjoy.com/05/09/woodstock-chimes-ruby-throated-hummingbird-windchime.html Woodstock Chimes R #Chimes #Hummingbird #Ruby
+	[2011-05-15 12:27] Elusive_Joe: I'm not entirely successfully installed gitorious at work. It seems this is the problem of #gitorious with #ruby 1.9.2
+	
 
 == Notes for Contributors
 

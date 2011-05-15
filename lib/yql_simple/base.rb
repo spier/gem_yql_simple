@@ -32,7 +32,7 @@ module YqlSimple
         full_request_url += "&#{@@env}"
         full_request_url += "&format=#{format}"
         full_request_url += "&q=#{CGI.escape(yql_query)}"
-
+    
         
         request = Curl::Easy.http_get(full_request_url)
         request.perform
@@ -45,7 +45,7 @@ module YqlSimple
       rescue Exception => ex
         puts ex
       end
-
+    
       return yahoo_response
     end  
 
