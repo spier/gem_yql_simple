@@ -2,10 +2,8 @@ require 'open-uri'
 require 'pp'
 require 'cgi'
 
-# this does not make sense! then the gem would depend on bundler! LOL!!! :))
-#Bundler.require(:default)
-
-# is this wrong? So I really need to list all the production gems that I have in the .gemspec?
+# Load all required dependencies here manually.
+# No bundler usage, as this would make the gem dependent on bundler! 
 require 'json'
 require 'nokogiri'
 require 'curb'

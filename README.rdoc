@@ -25,7 +25,7 @@ If you are using bundler you can do the following to install directly from the s
 
 == Usage
 
-Example of doing a twitter search, using the yql_simple gem.
+Example of doing a twitter search, using the yql_simple gem. You can also find this exaple in the *examples* folder.
 
 	#!/usr/bin/env ruby
 	require "rubygems"
