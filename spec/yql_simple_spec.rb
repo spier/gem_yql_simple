@@ -47,5 +47,17 @@ describe YqlSimple do
     core_tables.size.should == YQL_CORE_TABLE_COUNT
   end
   
+  it "test some simple YQL calls" do
+    # should return a status code of 200
+    query_string = 'SELECT * FROM data.headers WHERE url="https://github.com/spier/gem_yql_simple"'
+    response = YqlSimple.query(query_string, 'json')
+    response["query"]["results"]["resources"]["status"].should == "200"
+    
+    # all commits from the github feed should have an author key
+    query_string = 'SELECT * FROM feed WHERE url="https://github.com/spier/gem_yql_simple/commits/master.atom"'
+    response = YqlSimple.query(query_string, 'json')
+    response["query"]["results"]["entry"][0].should have_key("author")
+  end
+  
   
 end

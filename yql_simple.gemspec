@@ -13,8 +13,6 @@ Gem::Specification.new do |s|
   
   s.platform    = Gem::Platform::RUBY
   s.has_rdoc    = true
-  # s.extra_rdoc_files = ['README.rdoc']
-  # s.rdoc_options = ['--title','--main README.rdoc','--line-numbers']  
   s.rdoc_options << '--title' << '--main' << 'README.rdoc' << '--line-numbers' << '--inline-source'
 
   #s.rubyforge_project = "yql_simple"
