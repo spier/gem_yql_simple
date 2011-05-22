@@ -9,9 +9,33 @@ require 'nokogiri'
 require 'curb'
 
 module YqlSimple
-
+  # class << self
+    
     @@yql_api_url = "https://query.yahooapis.com/v1/public/yql"
     @@env = "env=store://datatables.org/alltableswithkeys"
+    
+    # attr_accessor :yql_api_url
+    # attr_accessor :env
+    
+    #get
+    def self.env
+      @@env
+    end
+    
+    #set
+    def self.env=(new_env)
+      @@env = new_env
+    end
+    
+    #get
+    def self.yql_api_url
+      @@yql_api_url
+    end
+    
+    #set
+    def self.yql_api_url=(new_yql_api_url)
+      @@yql_api_url = new_yql_api_url
+    end
 
 
     # Runs the given <b>yql_query</b> and returns the complete response.
@@ -47,4 +71,5 @@ module YqlSimple
       return yahoo_response
     end  
 
+  # end
 end
