@@ -71,3 +71,11 @@ the rdoc documentation will be generated in ./doc
 === get a list of rake tasks
 
 	rake -T
+	
+== Alternative Gems
+
+https://github.com/nas/yql
+
+
+	
+	
