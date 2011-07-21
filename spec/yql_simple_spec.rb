@@ -4,7 +4,7 @@ Bundler.require(:default, :development)
 # the gem itself is available by default
 # require 'yql_simple'
 
-YQL_CORE_TABLE_COUNT = 116
+YQL_CORE_TABLE_COUNT = 107
 
 # Tests
 # Docs: http://relishapp.com/rspec
@@ -49,21 +49,28 @@ describe YqlSimple do
   
   it "test some simple YQL calls" do
     # should return a status code of 200
-    query_string = 'SELECT * FROM data.headers WHERE url="https://github.com/spier/gem_yql_simple"'
-    response = YqlSimple.query(query_string, 'json')
-    response["query"]["results"]["resources"]["status"].should == "200"
+    # query_string = 'SELECT * FROM data.headers WHERE url="https://github.com/spier/gem_yql_simple"'
+    # response = YqlSimple.query(query_string, 'json')
+    # pp response
+    # response["query"]["results"]["resources"]["status"].should == "200"
     
     # all commits from the github feed should have an author key
     query_string = 'SELECT * FROM feed WHERE url="https://github.com/spier/gem_yql_simple/commits/master.atom"'
     response = YqlSimple.query(query_string, 'json')
     response["query"]["results"]["entry"][0].should have_key("author")
+    
+    # YQL queries to github are forbidden
+    expected_error_msg = 'Redirected to a robots.txt restricted URL: https://github.com/spier/gem_yql_simple'
+    query_string = 'SELECT * FROM html WHERE url="https://github.com/spier/gem_yql_simple"'
+    response = YqlSimple.query(query_string, 'json',true)
+    response["query"]["diagnostics"]["url"]["error"].should == expected_error_msg
   end
   
   
   it "test variable access" do 
     # show defaults
-    puts YqlSimple.env
-    puts YqlSimple.yql_api_url
+    # puts YqlSimple.env
+    # puts YqlSimple.yql_api_url
     
     # test set env
     env = "something"
@@ -75,8 +82,5 @@ describe YqlSimple do
     YqlSimple.yql_api_url = yql_api
     YqlSimple.yql_api_url.should == yql_api
   end  
-  
-  
-  
   
 end

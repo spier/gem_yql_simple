@@ -12,7 +12,10 @@ Gem::Specification.new do |s|
   s.description = s.summary = %q{Simple wrapper for calls to YQL}
   
   s.platform    = Gem::Platform::RUBY
-  s.has_rdoc    = true
+  
+  # NOTE: Gem::Specification#has_rdoc= is deprecated with no replacement. It will be removed on or after 2011-10-01.
+  # s.has_rdoc    = true
+  
   s.rdoc_options << '--title' << '--main' << 'README.rdoc' << '--line-numbers' << '--inline-source'
 
   #s.rubyforge_project = "yql_simple"

@@ -23,7 +23,7 @@ module YqlSimple
     end
     
     #set
-    def self.env=(new_env)
+    def self.env= (new_env)
       @@env = new_env
     end
     
