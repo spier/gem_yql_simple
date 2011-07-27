@@ -10,12 +10,26 @@ require 'cgi'
 
 require 'httparty'
 require 'oauth'
+require 'json'
+require 'logger'
 
 module YqlSimple
   
-  class SimpleClient
+  class Client
+    def initialize()  
+      @log = Logger.new(STDOUT)
+      @log.level = Logger::WARN
+    end
+  end
+  
+  
+  class SimpleClient < Client
     include HTTParty
     base_uri 'https://query.yahooapis.com/v1/public/yql'
+    
+    # def initialize()  
+    #   super()
+    # end
     
     # @@yql_api_url = "https://query.yahooapis.com/v1/public/yql"
     # @@env = "env=store://datatables.org/alltableswithkeys"
@@ -53,15 +67,14 @@ module YqlSimple
       # format = (hash.nil? or hash[:format.to_s].nil?) ? 'json' : hash[:format.to_s]
       # format = (hash && hash[:format]) || 'json'
       
-      puts "SimpleClient query()"
+      @log.info "SimpleClient query()"
     
       # try to run YQL query. If an error occures return an empty array 
       begin  
       
         #
-        # Httparty version :)
+        # Httparty version
         #
-        
         options = {
           :query => {
             :env => "store://datatables.org/alltableswithkeys",
@@ -103,29 +116,38 @@ module YqlSimple
   
   
   # from https://github.com/jnunemaker/twitter/blob/b9fcb86e9b5857940e290863474f8137fa899a49/lib/twitter/oauth.rb
-  class OAuthClient   
+  class OAuthClient < Client
     # extend Forwardable
     # def_delegators :get, :post
     # 
-    # attr_reader :ctoken, :csecret
-    
-    
+    attr_reader :ctoken, :csecret
     
     def initialize(ctoken, csecret)  
-      @ctoken, @csecret = ctoken, csecret
+      super()
+      @ctoken = ctoken
+      @csecret = csecret
     end
     
     def consumer
-      @consumer ||= ::OAuth::Consumer.new(@ctoken, @csecret, {:site => 'https://api.login.yahoo.com'})
+      @consumer ||= ::OAuth::Consumer.new(@ctoken, @csecret, config())
+    end
+    
+    def config
+      {
+        :site         => 'https://api.login.yahoo.com',
+        :scheme       => :header,
+        :http_method  => :post,
+      }
     end
     
     def access_token
-      @access_token ||= ::OAuth::AccessToken.new(consumer, @atoken, @asecret)
+      @access_token ||= ::OAuth::AccessToken.new(consumer(), @atoken, @asecret)
     end
     
     def query(yql_query, format='json', diagnostics='false')  
-      puts "OAuthClient query()"
+      @log.info "OAuthClient query()"
 
+      # TODO these options are not used yet!!!
       options = {
         :query => {
           :env => "store://datatables.org/alltableswithkeys",
@@ -137,13 +159,10 @@ module YqlSimple
       
       # yahoo_response = self.class.get('/', options)
       response = access_token.get("http://query.yahooapis.com/v1/yql?q=show%20tables&format=json&callback=")
-      pp response.body
+      # response = access_token.get("http://query.yahooapis.com/v1/yql",options)
+      return JSON[response.body]
     end
   end
 
 end
-
-
-
-# pp response
 

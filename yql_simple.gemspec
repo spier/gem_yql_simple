@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   
   # all dependencies of this gem
   # s.add_dependency "nokogiri"
-  # s.add_dependency "json"
+  s.add_dependency "json"
   # s.add_dependency "curb"
   s.add_dependency "httparty"
   s.add_dependency "oauth"
