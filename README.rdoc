@@ -15,8 +15,8 @@ I am using bundler[http://gembundler.com] for the dependencies, RSpec[http://rel
 == Continuous Integration
 
 Shows the current built status of this gem, as reported by [Travis CI](http://travis-ci.org/)
+[![Build Status](https://secure.travis-ci.org/spier/gem_yql_simple.png)](http://travis-ci.org/spier/gem_yql_simple)
 
-[![Build Status](http://travis-ci.org/spier/gem_yql_simple.png)](http://travis-ci.org/spier/gem_yql_simple)
 
 == Installation
 
