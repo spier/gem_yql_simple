@@ -1,4 +1,4 @@
-= Simple Ruby gem for YQL
+# Simple Ruby gem for YQL
 
 This is currently more an experiment of ruby gem building than a real ruby gem!!! The gem is usable but still may not be useful for anybody other than myself! Considered yourself at danger if you use it :)
 
@@ -7,19 +7,20 @@ This is my first implementation of a simple wrapper for YQL[http://developer.yah
 I am using bundler[http://gembundler.com] for the dependencies, RSpec[http://relishapp.com/rspec] for the testing, and RDoc[http://rdoc.sourceforge.net/doc/index.html] for code documentation.
 
 
-== Useful Reads for Gem Building
+## Useful Reads for Gem Building
 * {Developing a RubyGem using Bundler}[https://github.com/radar/guides/blob/master/gem-development.md]
 * {Making Ruby Gems}[http://timelessrepo.com/making-ruby-gems]
 * {Using .gemspecs as Intended}[http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/]
 
-== Continuous Integration
+
+## Continuous Integration
 
 Shows the current built status of this gem, as reported by [Travis CI](http://travis-ci.org/)
 
 [![Build Status](https://secure.travis-ci.org/spier/gem_yql_simple.png)](http://travis-ci.org/spier/gem_yql_simple)
 
 
-== Installation
+## Installation
 
 The gem is not released yet, so it is not on [http://rubygems.org](http://rubygems.org) or similar.
 If you really want to try it, what I would not recommend, then you have to build it yourself from source.
@@ -29,7 +30,7 @@ If you are using bundler you can do the following to install directly from the s
 	gem "yql_simple", :git => "git://github.com/spier/gem_yql_simple.git"
 	
 
-== Usage
+## Usage
 
 Example of doing a twitter search, using the yql_simple gem. You can also find this exaple in the *examples* folder.
 
@@ -56,31 +57,24 @@ This will output something like this:
 	[2011-05-15 12:27] Elusive_Joe: I'm not entirely successfully installed gitorious at work. It seems this is the problem of #gitorious with #ruby 1.9.2
 	
 
-== TODO
+## TODO
 
 * implement OAuth with YQL (will give the user more calls to YQL)
 * add more test
 * add [YQL Streaming](http://developer.yahoo.com/yql/guide/yql-odt-streaming.html) 
 
 
-== Notes for Contributors
+## Notes for Contributors
 
-=== build and install
-
+* build and install
 	(sudo) rake install
 
-=== run the tests
-
-This will check for a folder 'spec' and run rspec against all _spec files
-
+* run the tests (this will check for a folder 'spec' and run rspec against all _spec files)
 	bundle exec rspec spec
 	
-=== generate rdoc 
-
-the rdoc documentation will be generated in ./doc
-
+* generate rdoc (the rdoc documentation will be generated in ./doc)
 	rake rdoc
 
-=== get a list of rake tasks
-
+* get a list of rake tasks
 	rake -T
+	
