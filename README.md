@@ -2,15 +2,15 @@
 
 This is currently more an experiment of ruby gem building than a real ruby gem!!! The gem is usable but still may not be useful for anybody other than myself! Considered yourself at danger if you use it :)
 
-This is my first implementation of a simple wrapper for YQL[http://developer.yahoo.com/yql/] queries. It does not do anything fancy. Instead it just sends an HTTP request to YQL with the given query and returns the results as either a ruby Hash or Nokogiri::XML::Document.
+This is my first implementation of a simple wrapper for [YQL](http://developer.yahoo.com/yql/) queries. It does not do anything fancy. Instead it just sends an HTTP request to YQL with the given query and returns the results as either a ruby Hash or Nokogiri::XML::Document.
 
-I am using bundler[http://gembundler.com] for the dependencies, RSpec[http://relishapp.com/rspec] for the testing, and RDoc[http://rdoc.sourceforge.net/doc/index.html] for code documentation.
+I am using bundler[http://gembundler.com] for the dependencies, [RSpec](http://relishapp.com/rspec) for the testing, and [RDoc](http://rdoc.sourceforge.net/doc/index.html) for code documentation.
 
 
 ## Useful Reads for Gem Building
-* {Developing a RubyGem using Bundler}[https://github.com/radar/guides/blob/master/gem-development.md]
-* {Making Ruby Gems}[http://timelessrepo.com/making-ruby-gems]
-* {Using .gemspecs as Intended}[http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/]
+* [Developing a RubyGem using Bundler](https://github.com/radar/guides/blob/master/gem-development.md)
+* [Making Ruby Gems](http://timelessrepo.com/making-ruby-gems)
+* [Using .gemspecs as Intended](http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/)
 
 
 ## Continuous Integration
@@ -67,14 +67,18 @@ This will output something like this:
 ## Notes for Contributors
 
 * build and install
+
 	(sudo) rake install
 
 * run the tests (this will check for a folder 'spec' and run rspec against all _spec files)
+
 	bundle exec rspec spec
 	
 * generate rdoc (the rdoc documentation will be generated in ./doc)
+
 	rake rdoc
 
 * get a list of rake tasks
+
 	rake -T
 	
