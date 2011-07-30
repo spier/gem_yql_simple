@@ -6,7 +6,7 @@ script: "bundle exec rspec spec"
 
 # specify which ruby version to use
 rvm:
-  - 1.8.6
+  # - 1.8.6  - does not work with this version
   - 1.8.7
   - 1.9.2
 

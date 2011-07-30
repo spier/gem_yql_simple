@@ -1,6 +1,6 @@
 = Simple Ruby gem for YQL
 
-This is currently more an experiment of ruby gem building than a real ruby gem!!! The gem is usable but still may not be useful for anybody other than myself! You have been warned :)
+This is currently more an experiment of ruby gem building than a real ruby gem!!! The gem is usable but still may not be useful for anybody other than myself! Considered yourself at danger if you use it :)
 
 This is my first implementation of a simple wrapper for YQL[http://developer.yahoo.com/yql/] queries. It does not do anything fancy. Instead it just sends an HTTP request to YQL with the given query and returns the results as either a ruby Hash or Nokogiri::XML::Document.
 
@@ -12,10 +12,15 @@ I am using bundler[http://gembundler.com] for the dependencies, RSpec[http://rel
 * {Making Ruby Gems}[http://timelessrepo.com/making-ruby-gems]
 * {Using .gemspecs as Intended}[http://yehudakatz.com/2010/04/02/using-gemspecs-as-intended/]
 
+== Continuous Integration
+
+Shows the current built status of this gem, as reported by [Travis CI](http://travis-ci.org/)
+
+[![Build Status](http://travis-ci.org/spier/gem_yql_simple.png)](http://travis-ci.org/spier/gem_yql_simple)
 
 == Installation
 
-The gem is not released yet!
+The gem is not released yet, so it is not on [http://rubygems.org](http://rubygems.org) or similar.
 If you really want to try it, what I would not recommend, then you have to build it yourself from source.
 
 If you are using bundler you can do the following to install directly from the source:
@@ -49,6 +54,13 @@ This will output something like this:
 	[2011-05-15 12:41] openairjoy: outdoor: http://openairjoy.com/05/09/woodstock-chimes-ruby-throated-hummingbird-windchime.html Woodstock Chimes R #Chimes #Hummingbird #Ruby
 	[2011-05-15 12:27] Elusive_Joe: I'm not entirely successfully installed gitorious at work. It seems this is the problem of #gitorious with #ruby 1.9.2
 	
+
+== TODO
+
+* implement OAuth with YQL (will give the user more calls to YQL)
+* add more test
+* add [YQL Streaming](http://developer.yahoo.com/yql/guide/yql-odt-streaming.html) 
+
 
 == Notes for Contributors
 
