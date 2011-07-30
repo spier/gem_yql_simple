@@ -24,3 +24,11 @@ Rake::RDocTask.new do |rd|
     # rd.options << '--diagram'
   end
 end
+
+
+# task :default => :test_gem
+# 
+# desc "Run the tests"
+# task :test_gem do
+#   rspec spec
+# end

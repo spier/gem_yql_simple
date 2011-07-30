@@ -1,0 +1,13 @@
+
+# Define a custom build script
+# You can specify the main build command to run instead of just rake:
+script: "bundle exec rspec spec"
+
+
+# specify which ruby version to use
+rvm:
+  - 1.8.7
+
+# turn off all notifications
+notifications:
+  disabled: true
