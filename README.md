@@ -4,7 +4,7 @@ This is currently more an experiment of ruby gem building than a real ruby gem!!
 
 This is my first implementation of a simple wrapper for [YQL](http://developer.yahoo.com/yql/) queries. It does not do anything fancy. Instead it just sends an HTTP request to YQL with the given query and returns the results as either a ruby Hash or Nokogiri::XML::Document.
 
-I am using bundler[http://gembundler.com] for the dependencies, [RSpec](http://relishapp.com/rspec) for the testing, and [RDoc](http://rdoc.sourceforge.net/doc/index.html) for code documentation.
+I am using [bundler](http://gembundler.com) for the fetching the dependencies, [RSpec](http://relishapp.com/rspec) for the testing, and [RDoc](http://rdoc.sourceforge.net/doc/index.html) for code documentation.
 
 
 ## Useful Reads for Gem Building
