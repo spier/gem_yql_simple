@@ -60,7 +60,7 @@ This will output something like this:
 
 This will check for a folder 'spec' and run rspec against all _spec files
 
-	bundle exec rspec spec
+	rake spec
 	
 === generate rdoc 
 
