@@ -29,6 +29,13 @@ describe YqlSimple do
 
     core_tables = response["query"]["results"]["table"].select{|entry| not entry.is_a?(Hash)}
     core_tables.size.should >= YQL_CORE_TABLE_COUNT
+
+    # ----------
+
+    # all commits from the github feed should have an author key
+    query_string = 'SELECT * FROM feed WHERE url="https://github.com/spier/gem_yql_simple/commits/master.atom"'
+    response = oauth_client.query(query_string, 'json')
+    response["query"]["results"]["entry"][0].should have_key("author")
   end
 
   # it "OAuth failure" do

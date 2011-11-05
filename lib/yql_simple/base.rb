@@ -148,16 +148,16 @@ module YqlSimple
 
       # TODO these options are not used yet!!!
       options = {
-        :query => {
-          :env => "store://datatables.org/alltableswithkeys",
-          :diagnostics => diagnostics,
-          :format => format,
-          :q => yql_query
-        }
+        :env => "store://datatables.org/alltableswithkeys",
+        :diagnostics => diagnostics,
+        :format => format,
+        :q => yql_query
       }
 
       # yahoo_response = self.class.get('/', options)
-      response = access_token.get("http://query.yahooapis.com/v1/yql?q=show%20tables&format=json&callback=")
+      options_string = options.map{|k,v| "#{k}=#{CGI.escape(v)}"}.join("&")
+
+      response = access_token.get("http://query.yahooapis.com/v1/yql?#{options_string}")
       # response = access_token.get("http://query.yahooapis.com/v1/yql",options)
       return JSON[response.body]
     end
