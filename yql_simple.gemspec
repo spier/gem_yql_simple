@@ -6,27 +6,22 @@ Gem::Specification.new do |s|
   # general gem information
   s.name        = "yql_simple"
   s.version     = YqlSimple::VERSION
+  s.platform    = Gem::Platform::RUBY
   s.authors     = ["Sebastian Spier"]
   s.email       = ["blog@airness.de"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/spier/gem_yql_simple"
   s.description = s.summary = %q{Simple wrapper for calls to YQL}
-  
-  s.platform    = Gem::Platform::RUBY
-  
-  # NOTE: Gem::Specification#has_rdoc= is deprecated with no replacement. It will be removed on or after 2011-10-01.
-  # s.has_rdoc    = true
-  
-  s.rdoc_options << '--title' << '--main' << 'README.rdoc' << '--line-numbers' << '--inline-source'
 
+  s.rdoc_options << '--title' << '--main' << 'README.rdoc' << '--line-numbers' << '--inline-source'
   #s.rubyforge_project = "yql_simple"
-  
+
   # all dependencies of this gem
   # s.add_dependency "nokogiri"
   s.add_dependency "json"
   # s.add_dependency "curb"
   s.add_dependency "httparty"
   s.add_dependency "oauth"
-  
+
   # dependencies when developing this gem
   s.add_development_dependency "rspec"
   s.add_development_dependency "rake"

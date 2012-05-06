@@ -7,13 +7,12 @@ require 'rspec/core/rake_task'
 # see example
 # https://github.com/twitter/twitter-text-rb/blob/master/Rakefile
 desc 'generate API documentation to doc/rdocs/index.html'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 Rake::RDocTask.new do |rd|
   namespace :doc do
     rd.main = "README.rdoc"
     rd.rdoc_dir = 'doc'
-    # rd.rdoc_files.include("lib/**/*.rb")
     rd.rdoc_files.include("README.rdoc", "lib/**/*.rb")
 
     rd.options << '--inline-source'
