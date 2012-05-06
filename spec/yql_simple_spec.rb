@@ -1,9 +1,6 @@
 # require all gems from Bundler (default and development)
 Bundler.require(:default, :development)
 
-# the gem itself is available by default
-# require 'yql_simple'
-
 # the number of core tables changes but it should be more than 100
 YQL_CORE_TABLE_COUNT = 100
 
