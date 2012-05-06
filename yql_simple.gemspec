@@ -18,14 +18,14 @@ Gem::Specification.new do |s|
   # Note: taken from https://github.com/apache/buildr/blob/trunk/buildr.gemspec
   # Rakefile needs to create spec for both platforms (ruby and java), using the
   # $platform global variable.  In all other cases, we figure it out from RUBY_PLATFORM.
-  spec.platform = $platform || RUBY_PLATFORM[/java/] || 'ruby'
+  s.platform = $platform || RUBY_PLATFORM[/java/] || 'ruby'
 
   # all dependencies of this gem
   s.add_dependency "json"
   s.add_dependency "httparty"
   s.add_dependency "oauth"
 
-  s.add_dependency 'jruby-openssl' if spec.platform.to_s == 'jruby'
+  s.add_dependency 'jruby-openssl' if s.platform.to_s == 'jruby'
 
   # dependencies when developing this gem
   s.add_development_dependency "rspec"
