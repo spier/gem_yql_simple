@@ -15,9 +15,9 @@ log.info "creating YqlSimple::SimpleClient and fetching some data from Twitter v
 simple_client = YqlSimple::SimpleClient.new()
 
 query_string = 'SELECT * FROM twitter.search WHERE q="#ruby" LIMIT 5'
-response = simple_client.query(query_string)
+response = simple_client.query(query_string, 'xml')
 
 response["query"]["results"]["results"].each do |tweet|
   date = Time.parse(tweet["created_at"]).strftime("%Y-%m-%d %H:%M")
-  log.info "[#{date}] #{tweet["from_user"]}: #{tweet["text"]}"
+  puts "[#{date}] #{tweet["from_user"]}: #{tweet["text"]}"
 end

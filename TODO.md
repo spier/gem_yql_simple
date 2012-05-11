@@ -2,10 +2,9 @@
 - how to test the validity of the OAuth parameters?
 
 - add more test
+- write some tests for YQL exceptions
 
 - make the desired node in the YQL response selectable e.g. query/results/item
-
-- add [YQL Streaming](http://developer.yahoo.com/yql/guide/yql-odt-streaming.html) 
 
 - how to properly raise exceptions?
 	https://github.com/outsidein/api-rb/blob/master/lib/outside_in/resource/base.rb#L46	
@@ -17,5 +16,8 @@
 - enable switching SSL on/off
 - should the top level wrapper of YqlSimple be a class or a module?
 - handle YQL status codes (which indicate errors)
-- write some tests for YQL exceptions
+
 - currently the ./examples folder is added to the gem. not really good. how to exclude it?
+
+# Future
+- add [YQL Streaming](http://developer.yahoo.com/yql/guide/yql-odt-streaming.html) 
