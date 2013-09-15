@@ -6,10 +6,13 @@ script: "bundle exec rspec spec"
 
 # specify which ruby version to use
 rvm:
+  # - 1.8.6 not working
   - 1.8.7
   - 1.9.2
-  - jruby
-  # - 1.8.6 not working
+  - jruby-19mode
+  - rbx-19mode #rubinius
+  - ree
+
 
 # turn off all notifications
 notifications:
